@@ -1,0 +1,12 @@
+{
+    "prefix": "!",
+    "nodes": [
+        {
+            "name": "Node - 1",
+            "host": "Lavalink-hosting.jai110043.repl.co",
+            "port":443,
+            "password": "youshallnotpass",
+            "secure": true
+        }
+    ]
+}
