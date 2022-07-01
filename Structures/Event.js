@@ -4,7 +4,7 @@ module.exports = class Event {
 		this.name =  options.name || name;
 		this.client = client;
 		this.type = options.once ? 'once' : 'on';
-		this.emitter = this.client.poru;
+		this.emitter = this.client;
 	}
 
 	// eslint-disable-next-line no-unused-vars

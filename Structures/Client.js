@@ -96,10 +96,10 @@ async loadPoruEvents() {
             const event = new File(this, name);
             if (!(event instanceof PoruEvent)) throw new TypeError(`Event ${name} doesn't belong in Events`);
             this.events.set(event.name, event);
-            this.poru.on(name, (...args) => event.run(...args));
+            event.emitter[event.type](name, (...args) => event.run(...args));
         }
-    });}
-
+    });
+}
 
 
 
@@ -113,7 +113,7 @@ async start() {
  
     await this.loadCommands();
     await this.loadEvents();
- //   await this.loadPoruEvents();
+    await this.loadPoruEvents();
     super.login(process.env.TOKEN);
  }
 
